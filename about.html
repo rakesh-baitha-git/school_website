@@ -94,7 +94,7 @@
             display: block;
         }
 
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
@@ -107,7 +107,35 @@
             .nav-links.mobile {
                 display: flex;
             }
+        } */
+
+
+
+        /* Modify the .menu-toggle style for mobile view */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+                position: absolute;
+                /* Position the hamburger menu absolutely */
+                top: 15px;
+                /* Adjust the distance from the top */
+                right: 20px;
+                /* Adjust the distance from the right */
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-links.mobile {
+                display: flex;
+            }
         }
+
 
         /* About Us Section */
         .about-us-section {
@@ -259,9 +287,13 @@
         <div class="background-overlay"></div>
         <h2>About Us</h2>
         <div class="about-us-info">
-            <p>Welcome to MIM Academy! Established in 1990, we are dedicated to providing quality education to our students. Our institution is affiliated with WBBSE & WBCHSE, offering a comprehensive learning environment that nurtures academic excellence.</p>
-            <p>Our mission is to foster holistic development, blending academic rigor with extracurricular activities, preparing our students for the challenges ahead.</p>
-            <p>At MIM Academy, we believe in the power of education to transform lives and help build a brighter future.</p>
+            <p>Welcome to MIM Academy! Established in 1990, we are dedicated to providing quality education to our
+                students. Our institution is affiliated with WBBSE & WBCHSE, offering a comprehensive learning
+                environment that nurtures academic excellence.</p>
+            <p>Our mission is to foster holistic development, blending academic rigor with extracurricular activities,
+                preparing our students for the challenges ahead.</p>
+            <p>At MIM Academy, we believe in the power of education to transform lives and help build a brighter future.
+            </p>
         </div>
     </div>
 
@@ -269,7 +301,10 @@
     <div class="principal-message">
         <img src="principal.jpg" alt="Principal" class="principal-photo">
         <h2>From Our Principal</h2>
-        <p>"Welcome to MIM Academy! It is an honor to lead this institution that has been dedicated to excellence in education since 1990. Our students' success is our success, and we work tirelessly to provide them with the skills, knowledge, and values they need to thrive in the world. We pride ourselves on fostering a nurturing environment where every student can reach their full potential." – Principal</p>
+        <p>"Welcome to MIM Academy! It is an honor to lead this institution that has been dedicated to excellence in
+            education since 1990. Our students' success is our success, and we work tirelessly to provide them with the
+            skills, knowledge, and values they need to thrive in the world. We pride ourselves on fostering a nurturing
+            environment where every student can reach their full potential." – Principal</p>
     </div>
 
     <!-- Footer Section -->
