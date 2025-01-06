@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - MIM Academy</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('school-bg.png') no-repeat center center fixed, linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            background-size: cover, cover;
+            background-blend-mode: overlay;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            flex-wrap: nowrap;
+        }
+
+        header img {
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        header .school-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffd700;
+            margin: 0;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header img {
+                margin-bottom: 10px;
+            }
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ffd700;
+            color: #004080;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links.mobile {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-links.mobile {
+                display: flex;
+            }
+        }
+
+        /* Academics Section */
+        .academics-section {
+            text-align: left;
+            margin: 40px 20px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .academics-section .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('education-bg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .academics-section h2,
+        .curriculum-overview h3,
+        .grade-level-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #004080;
+            text-align: center; /* Center the heading */
+        }
+
+        .academics-info {
+            font-size: 18px;
+            color: #004080;
+            margin-top: 20px;
+        }
+
+        .academics-info p {
+            margin-bottom: 15px;
+        }
+
+        .academics-info i {
+            margin-right: 10px;
+        }
+
+        .academics-image {
+            float: right;
+            width: 40%;
+            margin-left: 20px;
+            border: 4px solid #004080;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .academics-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .academics-info {
+                font-size: 16px;
+            }
+
+            .academics-image {
+                float: none;
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .academics-section h2 {
+                font-size: 24px;
+            }
+
+            .academics-info {
+                font-size: 14px;
+            }
+        }
+
+        /* Curriculum Section */
+        .curriculum-overview {
+            margin: 40px 20px;
+            padding: 40px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .curriculum-overview h3 {
+            font-size: 28px;
+            color: #004080;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .curriculum-info {
+            font-size: 16px;
+            color: #444444;
+            line-height: 1.6;
+        }
+
+        /* Grade Level Section */
+        .grade-level-info {
+            margin: 40px 20px;
+            padding: 40px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .grade-level-info h3 {
+            font-size: 28px;
+            color: #004080;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .grade-level-info p {
+            font-size: 16px;
+            color: #444444;
+            line-height: 1.6;
+        }
+
+        /* Faculty Section */
+        .faculty-section {
+            margin: 40px 20px;
+            padding: 40px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .faculty-section h3 {
+            font-size: 28px;
+            color: #004080;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .faculty-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .faculty-card {
+            width: 220px;
+            height: 320px;
+            background-color: #ffffff;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .faculty-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .faculty-card h4 {
+            font-size: 20px;
+            margin-top: 15px;
+            color: #004080;
+        }
+
+        .faculty-card p {
+            font-size: 16px;
+            color: #444444;
+        }
+
+        /* Responsive adjustments for Faculty Section */
+        @media (max-width: 768px) {
+            .faculty-cards {
+                justify-content: center;
+            }
+
+            .faculty-card {
+                width: 180px;
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.jpg" alt="School Logo">
+            <div class="school-details">
+                <h1>MIM ACADEMY</h1>
+                <p>Affiliated to WBBSE & WBCHSE</p>
+                <p>ESTD: 1990</p>
+            </div>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="#news">News & Letter</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Academics Section -->
+    <div class="academics-section">
+        <div class="background-overlay"></div>
+        <h2>Academics at MIM Academy</h2>
+        <div class="academics-info">
+            <p>At MIM Academy, we offer a well-rounded education designed to develop both intellectual and practical skills. Our curriculum is carefully designed to encourage critical thinking, creativity, and problem-solving abilities.</p>
+            <p>We offer a wide range of subjects in the fields of Science, Mathematics, Social Studies, Languages, and Arts, with special emphasis on STEM education and extracurricular enrichment programs.</p>
+            <p>We cater to students from primary to higher secondary levels, ensuring that every student receives the best possible guidance to help them succeed academically and socially.</p>
+        </div>
+        <div class="academics-image">
+            <img src="school-building.jpg" alt="School Image">
+        </div>
+    </div>
+
+    <!-- Curriculum Overview Section -->
+    <div class="curriculum-overview">
+        <h3>Curriculum Overview</h3>
+        <div class="curriculum-info">
+            <p>Our curriculum is designed to provide a balanced education that nurtures both academic and co-curricular development. We follow the guidelines set by the West Bengal Board of Secondary Education (WBBSE) and the West Bengal Council of Higher Secondary Education (WBCHSE).</p>
+            <p>From primary education through secondary and higher secondary levels, we focus on delivering a well-rounded learning experience that includes strong foundations in core subjects and enriching activities like sports, arts, and vocational training.</p>
+        </div>
+    </div>
+
+    <!-- Grade Level Information Section -->
+    <div class="grade-level-info">
+        <h3>Grade Level Information</h3>
+        <p><strong>Primary School (Grades 1-5):</strong> Students in these grades focus on building fundamental knowledge in subjects like Mathematics, Science, Social Studies, and Languages.</p>
+        <p><strong>Secondary School (Grades 6-10):</strong> In these grades, we prepare students for the board exams while emphasizing in-depth subject knowledge and practical applications.</p>
+        <p><strong>Higher Secondary (Grades 11-12):</strong> Students at this level prepare for their higher education and career paths, with specializations in subjects like Science, Commerce, and Humanities.</p>
+    </div>
+
+    <!-- Faculty Section -->
+    <div class="faculty-section">
+        <h3>Meet Our Faculty</h3>
+        <div class="faculty-cards">
+            <!-- Faculty Card 1 -->
+            <div class="faculty-card">
+                <img src="faculty1.jpg" alt="Faculty Photo">
+                <h4>Dr. John Doe</h4>
+                <p><strong>Designation:</strong> Mathematics Teacher</p>
+                <p><strong>Qualification:</strong> Ph.D. in Mathematics</p>
+                <p><strong>Experience:</strong> 12+ years</p>
+            </div>
+
+            <!-- Faculty Card 2 -->
+            <div class="faculty-card">
+                <img src="faculty2.jpg" alt="Faculty Photo">
+                <h4>Ms. Jane Smith</h4>
+                <p><strong>Designation:</strong> English Teacher</p>
+                <p><strong>Qualification:</strong> M.A. in English Literature</p>
+                <p><strong>Experience:</strong> 8 years</p>
+            </div>
+
+            <!-- Faculty Card 3 -->
+            <div class="faculty-card">
+                <img src="faculty3.jpg" alt="Faculty Photo">
+                <h4>Mr. Robert Brown</h4>
+                <p><strong>Designation:</strong> Science Teacher</p>
+                <p><strong>Qualification:</strong> M.Sc. in Physics</p>
+                <p><strong>Experience:</strong> 10 years</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer style="background-color: #004080; color: white; padding: 40px 20px; text-align: center;">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.jpg" alt="School Logo" style="height: 60px; margin-bottom: 15px;">
+            </div>
+            <p style="font-size: 16px; margin: 0 0 15px;">MIM Academy | Established in 1990</p>
+            <div class="footer-links" style="margin-bottom: 20px;">
+                <a href="#home"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Home</a>
+                <a href="#about"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">About
+                    Us</a>
+                <a href="#academics"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Academics</a>
+                <a href="#news"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">News
+                    & Letter</a>
+                <a href="#contact"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Contact
+                    Us</a>
+            </div>
+            <p style="font-size: 14px; margin-bottom: 10px;">Follow us:</p>
+            <div class="social-icons" style="margin-bottom: 20px;">
+                <a href="https://facebook.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-linkedin"></i></a>
+            </div>
+            <p style="font-size: 14px; color: #ddd;">© 2025 MIM Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menuLinks = document.querySelector('.nav-links');
+            menuLinks.classList.toggle('mobile');
+        }
+    </script>
+</body>
+
+</html>

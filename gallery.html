@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - MIM Academy</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('school-bg.png') no-repeat center center fixed, linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            background-size: cover, cover;
+            background-blend-mode: overlay;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            flex-wrap: nowrap;
+        }
+
+        header img {
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        header .school-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffd700;
+            margin: 0;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header img {
+                margin-bottom: 10px;
+            }
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ffd700;
+            color: #004080;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links.mobile {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-links.mobile {
+                display: flex;
+            }
+        }
+
+        .gallery-section {
+            margin: 40px 20px;
+            padding: 40px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-section h2 {
+            font-size: 28px;
+            color: #004080;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-section h2 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-section h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.jpg" alt="School Logo">
+            <div class="school-details">
+                <h1>MIM ACADEMY</h1>
+                <p>Affiliated to WBBSE & WBCHSE</p>
+                <p>ESTD: 1990</p>
+            </div>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="#news">News & Letter</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Gallery Section -->
+    <div class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <a href="images/photo1.jpg" data-lightbox="gallery" data-title="Photo 1">
+                    <img src="images/photo1-thumb.jpg" alt="Gallery Image 1">
+                </a>
+            </div>
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <a href="images/photo2.jpg" data-lightbox="gallery" data-title="Photo 2">
+                    <img src="images/photo2-thumb.jpg" alt="Gallery Image 2">
+                </a>
+            </div>
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <a href="images/photo3.jpg" data-lightbox="gallery" data-title="Photo 3">
+                    <img src="images/photo3-thumb.jpg" alt="Gallery Image 3">
+                </a>
+            </div>
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <a href="images/photo4.jpg" data-lightbox="gallery" data-title="Photo 4">
+                    <img src="images/photo4-thumb.jpg" alt="Gallery Image 4">
+                </a>
+            </div>
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <a href="images/photo5.jpg" data-lightbox="gallery" data-title="Photo 5">
+                    <img src="images/photo5-thumb.jpg" alt="Gallery Image 5">
+                </a>
+            </div>
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <a href="images/photo6.jpg" data-lightbox="gallery" data-title="Photo 6">
+                    <img src="images/photo6-thumb.jpg" alt="Gallery Image 6">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background-color: #004080; color: white; padding: 40px 20px; text-align: center;">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.jpg" alt="School Logo" style="height: 60px; margin-bottom: 15px;">
+            </div>
+            <p style="font-size: 16px; margin: 0 0 15px;">MIM Academy | Established in 1990</p>
+            <div class="footer-links" style="margin-bottom: 20px;">
+                <a href="#home" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Home</a>
+                <a href="#about" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">About Us</a>
+                <a href="#academics" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Academics</a>
+                <a href="#news" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">News & Letter</a>
+                <a href="#contact" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Contact Us</a>
+            </div>
+            <p style="font-size: 14px; margin-bottom: 10px;">Follow us:</p>
+            <div class="social-icons" style="margin-bottom: 20px;">
+                <a href="https://facebook.com" target="_blank" style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank" style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i class="fa fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i class="fa fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <p style="font-size: 14px; color: #ddd;">© 2025 MIM Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const menuLinks = document.querySelector('.nav-links');
+            menuLinks.classList.toggle('mobile');
+        }
+    </script>
+</body>
+
+</html>

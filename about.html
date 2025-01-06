@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('school-bg.png') no-repeat center center fixed, linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            background-size: cover, cover;
+            background-blend-mode: overlay;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            flex-wrap: nowrap;
+        }
+
+        header img {
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        header .school-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffd700;
+            margin: 0;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header img {
+                margin-bottom: 10px;
+            }
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ffd700;
+            color: #004080;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links.mobile {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-links.mobile {
+                display: flex;
+            }
+        }
+
+        /* About Us Section */
+        .about-us-section {
+            text-align: left;
+            margin: 40px 20px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-us-section .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('education-bg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .about-us-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #004080;
+            text-align: center;
+        }
+
+        .about-us-info {
+            font-size: 18px;
+            color: #004080;
+            margin-top: 20px;
+        }
+
+        .about-us-info p {
+            margin-bottom: 15px;
+        }
+
+        .about-us-info i {
+            margin-right: 10px;
+        }
+
+        /* Hover effect for items */
+        .about-us-info a:hover {
+            color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .about-us-info {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-us-section h2 {
+                font-size: 24px;
+            }
+
+            .about-us-info {
+                font-size: 14px;
+            }
+        }
+
+        /* From Our Principal Section */
+        .principal-message {
+            text-align: center;
+            margin: 40px 20px;
+            padding: 40px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .principal-message h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #004080;
+        }
+
+        .principal-message p {
+            font-size: 18px;
+            color: #004080;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .principal-message i {
+            font-size: 24px;
+            color: #ffd700;
+        }
+
+        .principal-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .principal-message p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .principal-message h2 {
+                font-size: 24px;
+            }
+
+            .principal-message p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.jpg" alt="School Logo">
+            <div class="school-details">
+                <h1>MIM ACADEMY</h1>
+                <p>Affiliated to WBBSE & WBCHSE</p>
+                <p>ESTD: 1990</p>
+            </div>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="#news">News & Letter</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <div class="about-us-section">
+        <div class="background-overlay"></div>
+        <h2>About Us</h2>
+        <div class="about-us-info">
+            <p>Welcome to MIM Academy! Established in 1990, we are dedicated to providing quality education to our students. Our institution is affiliated with WBBSE & WBCHSE, offering a comprehensive learning environment that nurtures academic excellence.</p>
+            <p>Our mission is to foster holistic development, blending academic rigor with extracurricular activities, preparing our students for the challenges ahead.</p>
+            <p>At MIM Academy, we believe in the power of education to transform lives and help build a brighter future.</p>
+        </div>
+    </div>
+
+    <!-- From Our Principal Section -->
+    <div class="principal-message">
+        <img src="principal.jpg" alt="Principal" class="principal-photo">
+        <h2>From Our Principal</h2>
+        <p>"Welcome to MIM Academy! It is an honor to lead this institution that has been dedicated to excellence in education since 1990. Our students' success is our success, and we work tirelessly to provide them with the skills, knowledge, and values they need to thrive in the world. We pride ourselves on fostering a nurturing environment where every student can reach their full potential." – Principal</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer style="background-color: #004080; color: white; padding: 40px 20px; text-align: center;">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.jpg" alt="School Logo" style="height: 60px; margin-bottom: 15px;">
+            </div>
+            <p style="font-size: 16px; margin: 0 0 15px;">MIM Academy | Established in 1990</p>
+            <div class="footer-links" style="margin-bottom: 20px;">
+                <a href="#home"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Home</a>
+                <a href="#about"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">About
+                    Us</a>
+                <a href="#academics"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Academics</a>
+                <a href="#news"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">News
+                    & Letter</a>
+                <a href="#contact"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Contact
+                    Us</a>
+            </div>
+            <p style="font-size: 14px; margin-bottom: 10px;">Follow us:</p>
+            <div class="social-icons" style="margin-bottom: 20px;">
+                <a href="https://facebook.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-linkedin"></i></a>
+            </div>
+            <p style="font-size: 14px; color: #ddd;">© 2025 MIM Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add FontAwesome icons if needed -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const menuLinks = document.querySelector('.nav-links');
+            menuLinks.classList.toggle('mobile');
+        }
+    </script>
+</body>
+
+</html>
