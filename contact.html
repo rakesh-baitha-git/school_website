@@ -94,7 +94,7 @@
             display: block;
         }
 
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
@@ -107,7 +107,35 @@
             .nav-links.mobile {
                 display: flex;
             }
+        } */
+
+
+
+        /* Modify the .menu-toggle style for mobile view */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+                position: absolute;
+                /* Position the hamburger menu absolutely */
+                top: 15px;
+                /* Adjust the distance from the top */
+                right: 20px;
+                /* Adjust the distance from the right */
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-links.mobile {
+                display: flex;
+            }
         }
+
 
         /* Contact Us Section */
         .contact-us-section {
@@ -205,7 +233,8 @@
         <div class="contact-us-info">
             <p><i class="fa fa-map-marker"></i> Address: [Insert School Address]</p>
             <p><i class="fa fa-phone"></i> Phone: [Insert School Phone Number]</p>
-            <p><i class="fa fa-envelope"></i> Email: <a href="mailto:[Insert School Email]">[Insert School Email]</a></p>
+            <p><i class="fa fa-envelope"></i> Email: <a href="mailto:[Insert School Email]">[Insert School Email]</a>
+            </p>
         </div>
     </div>
 
@@ -214,7 +243,8 @@
         style="margin: 40px 20px; padding: 20px; background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         <h2 style="font-size: 28px; color: #004080; text-align: center;">Locate Us</h2>
         <div style="text-align: center; margin-top: 20px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.6231727769346!2d88.17130477401811!3d22.443204737702917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027d887540a97d%3A0x9c184967dfdaaf79!2sMim%20Academy%20School!5e0!3m2!1sen!2sin!4v1736179052981!5m2!1sen!2sin"
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.6231727769346!2d88.17130477401811!3d22.443204737702917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027d887540a97d%3A0x9c184967dfdaaf79!2sMim%20Academy%20School!5e0!3m2!1sen!2sin!4v1736179052981!5m2!1sen!2sin"
                 width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
