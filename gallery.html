@@ -95,7 +95,7 @@
             display: block;
         }
 
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
@@ -108,7 +108,35 @@
             .nav-links.mobile {
                 display: flex;
             }
+        } */
+
+
+
+        /* Modify the .menu-toggle style for mobile view */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+                position: absolute;
+                /* Position the hamburger menu absolutely */
+                top: 15px;
+                /* Adjust the distance from the top */
+                right: 20px;
+                /* Adjust the distance from the right */
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-links.mobile {
+                display: flex;
+            }
         }
+
 
         .gallery-section {
             margin: 40px 20px;
@@ -233,18 +261,34 @@
             </div>
             <p style="font-size: 16px; margin: 0 0 15px;">MIM Academy | Established in 1990</p>
             <div class="footer-links" style="margin-bottom: 20px;">
-                <a href="#home" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Home</a>
-                <a href="#about" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">About Us</a>
-                <a href="#academics" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Academics</a>
-                <a href="#news" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">News & Letter</a>
-                <a href="#contact" style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Contact Us</a>
+                <a href="#home"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Home</a>
+                <a href="#about"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">About
+                    Us</a>
+                <a href="#academics"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Academics</a>
+                <a href="#news"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">News
+                    & Letter</a>
+                <a href="#contact"
+                    style="color: #ffd700; text-decoration: none; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Contact
+                    Us</a>
             </div>
             <p style="font-size: 14px; margin-bottom: 10px;">Follow us:</p>
             <div class="social-icons" style="margin-bottom: 20px;">
-                <a href="https://facebook.com" target="_blank" style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com" target="_blank" style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i class="fa fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank" style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i class="fa fa-instagram"></i></a>
-                <a href="https://linkedin.com" target="_blank" style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i class="fa fa-linkedin"></i></a>
+                <a href="https://facebook.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"
+                    style="color: #ffd700; margin: 0 15px; font-size: 20px; transition: color 0.3s;"><i
+                        class="fa fa-linkedin"></i></a>
             </div>
             <p style="font-size: 14px; color: #ddd;">© 2025 MIM Academy. All rights reserved.</p>
         </div>
