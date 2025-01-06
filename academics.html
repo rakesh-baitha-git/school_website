@@ -94,7 +94,7 @@
             display: block;
         }
 
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
@@ -107,7 +107,34 @@
             .nav-links.mobile {
                 display: flex;
             }
+        } */
+
+
+        /* Modify the .menu-toggle style for mobile view */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+                position: absolute;
+                /* Position the hamburger menu absolutely */
+                top: 15px;
+                /* Adjust the distance from the top */
+                right: 20px;
+                /* Adjust the distance from the right */
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-links.mobile {
+                display: flex;
+            }
         }
+
 
         /* Academics Section */
         .academics-section {
@@ -139,7 +166,8 @@
             font-size: 28px;
             margin-bottom: 20px;
             color: #004080;
-            text-align: center; /* Center the heading */
+            text-align: center;
+            /* Center the heading */
         }
 
         .academics-info {
@@ -327,9 +355,13 @@
         <div class="background-overlay"></div>
         <h2>Academics at MIM Academy</h2>
         <div class="academics-info">
-            <p>At MIM Academy, we offer a well-rounded education designed to develop both intellectual and practical skills. Our curriculum is carefully designed to encourage critical thinking, creativity, and problem-solving abilities.</p>
-            <p>We offer a wide range of subjects in the fields of Science, Mathematics, Social Studies, Languages, and Arts, with special emphasis on STEM education and extracurricular enrichment programs.</p>
-            <p>We cater to students from primary to higher secondary levels, ensuring that every student receives the best possible guidance to help them succeed academically and socially.</p>
+            <p>At MIM Academy, we offer a well-rounded education designed to develop both intellectual and practical
+                skills. Our curriculum is carefully designed to encourage critical thinking, creativity, and
+                problem-solving abilities.</p>
+            <p>We offer a wide range of subjects in the fields of Science, Mathematics, Social Studies, Languages, and
+                Arts, with special emphasis on STEM education and extracurricular enrichment programs.</p>
+            <p>We cater to students from primary to higher secondary levels, ensuring that every student receives the
+                best possible guidance to help them succeed academically and socially.</p>
         </div>
         <div class="academics-image">
             <img src="school-building.jpg" alt="School Image">
@@ -340,17 +372,24 @@
     <div class="curriculum-overview">
         <h3>Curriculum Overview</h3>
         <div class="curriculum-info">
-            <p>Our curriculum is designed to provide a balanced education that nurtures both academic and co-curricular development. We follow the guidelines set by the West Bengal Board of Secondary Education (WBBSE) and the West Bengal Council of Higher Secondary Education (WBCHSE).</p>
-            <p>From primary education through secondary and higher secondary levels, we focus on delivering a well-rounded learning experience that includes strong foundations in core subjects and enriching activities like sports, arts, and vocational training.</p>
+            <p>Our curriculum is designed to provide a balanced education that nurtures both academic and co-curricular
+                development. We follow the guidelines set by the West Bengal Board of Secondary Education (WBBSE) and
+                the West Bengal Council of Higher Secondary Education (WBCHSE).</p>
+            <p>From primary education through secondary and higher secondary levels, we focus on delivering a
+                well-rounded learning experience that includes strong foundations in core subjects and enriching
+                activities like sports, arts, and vocational training.</p>
         </div>
     </div>
 
     <!-- Grade Level Information Section -->
     <div class="grade-level-info">
         <h3>Grade Level Information</h3>
-        <p><strong>Primary School (Grades 1-5):</strong> Students in these grades focus on building fundamental knowledge in subjects like Mathematics, Science, Social Studies, and Languages.</p>
-        <p><strong>Secondary School (Grades 6-10):</strong> In these grades, we prepare students for the board exams while emphasizing in-depth subject knowledge and practical applications.</p>
-        <p><strong>Higher Secondary (Grades 11-12):</strong> Students at this level prepare for their higher education and career paths, with specializations in subjects like Science, Commerce, and Humanities.</p>
+        <p><strong>Primary School (Grades 1-5):</strong> Students in these grades focus on building fundamental
+            knowledge in subjects like Mathematics, Science, Social Studies, and Languages.</p>
+        <p><strong>Secondary School (Grades 6-10):</strong> In these grades, we prepare students for the board exams
+            while emphasizing in-depth subject knowledge and practical applications.</p>
+        <p><strong>Higher Secondary (Grades 11-12):</strong> Students at this level prepare for their higher education
+            and career paths, with specializations in subjects like Science, Commerce, and Humanities.</p>
     </div>
 
     <!-- Faculty Section -->
